@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>picture Element</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <picture>
+        <source media="(min-width: 650px)" srcset="../images/sun.jpg">
+        <source media="(min-width: 460px)" srcset="../images/lap.jpg">
+        <img src="https://thumbs.dreamstime.com/b/night-reflections-4484268.jpg?w=576" alt="Nature">
+    </picture>
+
+    <!-- this is use to use where the screen does not support the certain type of image so it select the best image which is supported by the screen -->
+    <!-- <picture>
+        <source srcset="../images/sun.png">
+        <source srcset="../images/lap.jpg">
+        <img src="https://thumbs.dreamstime.com/b/night-reflections-4484268.jpg?w=576" alt="Nature" >
+    </picture> -->
+</body>
+</html>

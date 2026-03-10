@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Sizes</title>
+    <style>
+        .first-table table,
+        .first-table th,
+        .first-table td {
+            border: 2px solid black;
+            border-color: aqua;
+            border-collapse: collapse;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .second-table table,
+        .second-table th,
+        .second-table td {
+            border: 2px solid black;
+            border-color: red;
+            border-collapse: collapse;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .third-table table,
+        .third-table th,
+        .third-table td {
+            border: 2px solid black;
+            border-color: green;
+            border-collapse: collapse;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .fourth-table table,
+        .fourth-table th,
+        .fourth-table td {
+            border: 2px solid black;
+            border-color: orange;
+            border-collapse: collapse;
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <table style="width: 100%;" class="first-table">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Country</th>
+        </tr>
+        <tr>
+            <td>Harry Depp</td>
+            <td>28</td>
+            <td>Britain</td>
+        </tr>
+        <tr>
+            <td>John Smith</td>
+            <td>35</td>
+            <td>USA</td>
+        </tr>
+        <tr>
+            <td>Raju kumar</td>
+            <td>19</td>
+            <td>Nepal</td>
+        </tr>
+    </table>
+
+    <table class="second-table">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Country</th>
+        </tr>
+        <tr style="height: 200px;">
+            <td>Harry Depp</td>
+            <td>28</td>
+            <td>Britain</td>
+        </tr>
+        <tr>
+            <td>John Smith</td>
+            <td>35</td>
+            <td>USA</td>
+        </tr>
+        <tr>
+            <td>Raju kumar</td>
+            <td>19</td>
+            <td>Nepal</td>
+        </tr>
+    </table>
+
+
+    <table class="third-table">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Country</th>
+        </tr>
+        <tr>
+            <td style="width:200px;">Harry Depp</td>
+            <td>28</td>
+            <td>Britain</td>
+        </tr>
+        <tr>
+            <td>John Smith</td>
+            <td>35</td>
+            <td>USA</td>
+        </tr>
+        <tr>
+            <td>Raju kumar</td>
+            <td>19</td>
+            <td>Nepal</td>
+        </tr>
+    </table>
+
+    <table class="fourth-table">
+        <!--this is caption used to add the caption on the top of the table-->
+        <caption>Student Details</caption>
+
+        <tr>
+            <th>Name</th>
+            <td>Sahil</td>
+            <td>Abdullah</td>
+        </tr>
+        <tr>
+            <th>Contact number</th>
+            <td>9876543210</td>
+            <td>9876543210</td>
+        </tr>
+    </table>
+
+    <table class="first-table" style="border-spacing: 10px;">
+        <caption>Details</caption>
+        <tr>
+            <th colspan="2">Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+        </tr>
+    </table>
+</body>
+
+</html>

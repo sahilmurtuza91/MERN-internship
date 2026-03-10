@@ -1,0 +1,16 @@
+*{
+            box-sizing: border-box;
+        }
+        .container{
+            background-color: lightblue;
+            border: 2px solid green;
+
+            margin: 20px;
+        }
+        p{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            color: red;
+            border: 2px dashed yellow;
+            padding: 20px;
+        }
