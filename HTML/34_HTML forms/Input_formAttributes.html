@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input form* Attributes</title>
+    <style>
+        button{
+            padding: 3px;
+            background-color: rgb(100, 229, 100);
+            color: white;
+            border-radius: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <!--
+    form Attribute:
+    The form attribute in HTML is used to associate an input element with a form, even if that element is outside the <form> tag.
+
+    Normally, all input elements must be inside the <form>, but the form attribute allows them to be placed anywhere in the page and still belong to that form.
+    -->
+        <h3>Form Attribute Example</h3>
+    <form action="" id="myForm">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+        <br><br>
+    </form>
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" form="myForm" required>
+    <br><br>
+    <button type="submit" form="myForm">Submit</button>
+    <br><br><hr>
+
+    <!-- formaction Attribute:-> this is used to specify the URL where the form data should be submitted -->
+    <h3>Form Action Attribute Example</h3>
+    <form action="submit.php">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+        <br><br>
+        <button type="submit">Submit</button><br><br>
+        <button type="submit" formaction="save.php">Save</button><br><br>
+    </form>
+    <br><br><hr>
+
+    <!--
+    formenctype attribute:->
+    The formenctype attribute is used to specify how the form data should be encoded when it is sent to the server
+    -->
+    <h3>Form Encoding Type Attribute Example</h3>
+    <form action="">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+        <br><br>
+        <button type="submit" formenctype="application/x-www-form-urlencoded">Submit</button><br><br>
+        <button type="submit" formenctype="multipart/form-data">Submit with file</button><br><br>
+    </form>
+    <br><Br><hr>
+
+    <!--
+    formmethod attribute:->
+    The formmethod attribute is used to specify the HTTP method (GET or POST) that the browser uses to submit the form data to the server.
+    -->
+    <h3>Form Method Attribute Example</h3>
+    <form action="submit.php" method="get">
+        <label for="fname">First name</label>
+        <input type="text" name="fname" id="fname">
+        <br><br>
+
+        <label for="lname">Last name</label>
+        <input type="text" name="lname" id="lname">
+        <br><br>
+
+        <button type="submit">Submit with GET</button>
+        <button type="submit" formmethod="post">Submit with POST</button>
+    </form>
+    <br><Br><hr>
+
+    <!--
+    formtarget attribute:-> The formtarget attribute is used to specify where to display the response after submitting the form. It can take values like _blank, _self, _parent, or _top.
+    -->
+    <h3>Form Target Attribute Example</h3>
+    <form action="" target="_self">
+        <label for="fname">First name</label>
+        <input type="text" name="fname" id="fname">
+        <br><br>
+
+        <label for="lname">Last name</label>
+        <input type="text" name="lname" id="lname">
+        <br><br>
+
+        <button type="submit">Submit in Same Tab</button>
+        <button type="submit"formtarget="_blank">Submit in New Tab</button>
+    </form>
+    <br><br><hr>
+
+    <!--
+    formnovalidate attribute:-> The formnovalidate attribute is used to indicate that the form should not be validated when submitted.]
+    -->
+    <h3>Form No Validate Attribute Example</h3>
+    <form action="">
+        <label for="fname">First name</label>
+        <input type="text" name="fname" id="fname" required>
+        <br><br>
+        <label for="lname">Last name</label>
+        <input type="text" name="lname" id="lname" required>
+        <br><br>
+        <input type="submit" value="Submit">
+        <input type="submit" formnovalidate="formnovalidate" value="Submit without validation">
+    </form>
+    <br><br><hr>
+</body>
+</html>

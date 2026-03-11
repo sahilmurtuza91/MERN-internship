@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Elements</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="car">Choose a car</label>
+        <select name="car" id="car">
+            <option value="car1">Volvo</option>
+            <option value="car2">BMW</option>
+            <option value="car3">Toyota</option>
+        </select>
+    </form>
+
+    <br>
+    <hr>
+    <!--To define the pre define select optin we have to use the selected in the optin starting tag-->
+
+    <form action="">
+        <label for="car">Choose a car</label>
+        <select name="car" id="car">
+            <option value="car1">Volvo</option>
+            <option value="car2" selected>BMW</option>
+            <option value="car3">Toyota</option>
+        </select>
+    </form>
+    <br>
+    <hr>
+
+    <!--
+    Visible Values:
+    Use the size attribute to specify the number of visible values, and remaining value is scrolling.
+    -->
+    <form action="">
+        <label for="car">Choose a car</label>
+        <select name="car" id="car" size="3">
+            <option value="car1">Volvo</option>
+            <option value="car2">BMW</option>
+            <option value="car3">Toyota</option>
+            <option value="car4">Audi</option>
+            <option value="car5">Mercedes</option>
+        </select>
+    </form>
+    <br>
+    <hr>
+
+    <!--
+    Allow Multiple Selections:
+    Use the multiple attribute to allow the user to select more than one value:
+    -->
+    <form action="">
+        <label for="car">Choose a car</label>
+        <select name="car" id="car" size="3" multiple>
+            <option value="car1">Volvo</option>
+            <option value="car2">BMW</option>
+            <option value="car3">Toyota</option>
+            <option value="car4">Audi</option>
+            <option value="car5">Mercedes</option>
+        </select>
+    </form>
+
+    <!--Text area-->
+    <textarea name="message" id="message" cols="20" rows="10">
+This is the text area
+    </textarea>
+    <br>
+    <hr>
+    <!--We can also style or defind the widht and height of the text area-->
+    <textarea name="content" id="content" style="width:200px; height:600px;">
+This is the text area in which the style is used to describe the dimension of the text area.
+    </textarea>
+    <br>
+    <hr>
+
+    <button type="button" onclick="alert('Hellow coding world!')">Click me</button>
+    <br><br>
+    <hr>
+
+    <!-- <fieldset> and <legend> Elements 
+        The <fieldset> element is used to group related data in a form.
+        The <legend> element defines a caption for the <fieldset> element.
+    -->
+    <form action="">
+        <fieldset>
+            <legend>personal information</legend>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="jhon Doe">
+            <br><br>
+
+            <label for="date">D.O.B</label>
+            <input type="date" name="date" id="date" placeholder="32/05/2005">
+            <br><br>
+
+            <label>Gender</label>
+            <input type="radio" name="gender" id="male" value="male">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="female" value="female">
+            <label for="female">Female</label>
+            <br>
+            <p>favorite subject</p>
+            <input type="checkbox" name="subjects" id="math">
+            <label for="math">Maths</label><br>
+            <input type="checkbox" name="subjects" id="science">
+            <label for="science">Science</label><br>
+            <input type="checkbox" name="subjects" id="english">
+            <label for="english">English</label><br>
+            <input type="checkbox" name="subjects" id="history">
+            <label for="history">History</label>
+            <br><br>
+        </fieldset>
+    </form>
+    <br><br><hr>
+
+    <!--
+    <datalist>:-
+    The <datalist> element provides a list of predefined suggestions for an <input> field while still allowing the user to enter a custom value.
+    -->
+
+    <p>This is datalist that is used to add some predefined suggestions</p>
+    <form action="">
+        <input list="browser" name="language">
+        <datalist id="browser">
+            <option value="HTML"></option>
+            <option value="CSS"></option>
+            <option value="JavaScript"></option>
+            <option value="Python"></option>
+            <option value="Java"></option>
+            <option value="C++"></option>
+        </datalist>
+    </form>
+
+    <form action="">
+        <label for="favColor">Choose Favorite Color:</label>
+        <input type="color" name="favColor" id="favColor">
+    </form>
+
+    <!--Min Max Attribute-->
+    <form action="">
+        <label for="dateMax">Enter the date before 1980-01-01:</label>
+        <input type="date" name="dateMax" id="dateMax" max="1979-12-31"><br><br>
+
+        <label for="dateMin">Enter the date after 2000-01-01:</label>
+        <input type="date" name="dateMin" id="dateMin" min="2000-01-02">
+    </form>
+
+    <!-- Value Attribute in the input field:- that gives a default input value-->
+     <form action="">
+        <label for="fname">Name</label>
+        <input type="text" name="fname" id="fname" value="Sahil Murtuza">
+     </form>
+    <br><br><hr>
+     <!--
+    size Attribute
+    The size attribute specifies the width of an <input> element in characters. It is used for text, search, tel, url, email, and password input types.
+
+    size does not work with type="number" inputs
+     -->
+    <form action="">
+        <label for="fname">Name</label>
+        <input type="text" name="fname" id="fname" size="20">
+        <br><br>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Attribute</title>
+</head>
+<body>
+    <form action="">
+        <!--Value Attribute:- Gives the default value to the input field -->
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" value="Sahil murtuza">
+        <br><br>
+
+        <!--Size Attribuute which is used to set the size of the input field-->
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" value="Sahil murtuza" size="30">
+        <br><br>
+
+        <!-- Maxlength Attribute:- Sets the maximum number of characters allowed in the input field -->
+         <label for="name">Name</label>
+         <input type="text" name="name" id="name" maxlength="20">
+         <br><br>
+
+         <!--min and max atrribuute:- it is used to set the minimum and maximum value for an input field -->
+         <label for="num">Number</label>
+         <input type="number" name="num" id="num" min="1" max="10">
+         <br><br>
+
+         <!-- multiple Attribute:- used to select the multiple input-->
+          <label for="file">Choose files:</label>
+          <input type="file" name="file" id="file" multiple>
+          <br><br>
+
+        <!-- patter Attribute:- used to specify a regular expression that the input field's value must match 
+        It tells the browser what format the user must follow when entering data.
+        If the input does not match the pattern, the form will not submit and the browser shows a validation message. 
+
+        pattern="[A-Za-z]+":-> This pattern allows only uppercase and lowercase letters. The "+" means that there must be at least one letter.
+
+         pattern="[0-9]{10}":-> This pattern allows exactly 10 digits. The "{10}" means that there must be exactly 10 digits. and [0-9] means any digit from 0 to 9.
+
+         pattern=".{8,}:-> This pattern allows any character (.) and requires at least 8 characters ({8,} means 8 or more characters).
+        -->
+        <label for="num">Number</label>
+        <input type="number" name="num" id="num" pattern="[0-9]{10}">
+        <br><br>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" pattern="[A-Za-z]">
+        <br><br>
+        <label for="pass">Password</label>
+        <input type="password" name="pass" id="pass" pattern=".{8,}">
+        <br><br>
+
+        <!--
+        required Attribute:->
+        The required attribute is used to specify that an input field must be filled out before submitting the form. 
+        When an input field has the required attribute, the browser will prevent the form from being submitted if that field is left empty.
+        -->
+
+        <label for="adhar">Adhar number</label>
+        <input type="number" value="adhar" id="adhar" maxlength="12" required>
+        <br><br>
+
+        <!-- step Attribute:- used to specify the interval between valid values for an input field-->
+         <label for="point">point</label>
+         <input type="number" value="point" id="point" step="2">
+         <br><br>
+
+         <!--autofocus Attribute:-> it automatically focus the input feild when the page is loaded-->
+         <label for="email">Email</label>
+         <input type="email" value="email" id="email" autofocus>
+         <br><br>
+
+         
+    </form>
+</body>
+</html>
