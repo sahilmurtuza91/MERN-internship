@@ -1,0 +1,16 @@
+body{
+    background-image: url(https://thumbs.dreamstime.com/b/night-reflections-4484268.jpg?w=576);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+h1{
+    text-align: center;
+    color: white;
+    margin: 200px;
+    margin-bottom: 0px;
+}
+p{
+    color: white;
+    text-align: center;
+}
