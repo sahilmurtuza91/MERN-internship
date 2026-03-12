@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Margins</title>
+    <style>
+        h1{
+            text-align: center;
+            margin: 20px;
+        }
+        .first-para{
+            width: 300px;
+            margin: auto;
+        }
+        .first-div{
+            background-color: aqua;
+            color: white;
+            margin: 20px;
+        }
+        .first-div p{
+            margin: inherit;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Margins</h1>
+    <p class="first-para">The CSS margin properties are used to create space around elements, outside of any defined borders.</p>
+
+    <div class="first-div">
+        <h2>use the different property of the margin</h2>
+        <p>Here we use the margin inherit property</p>
+    </div>
+    <!--
+    Margin Collapse
+    Margin collapse is when two margins collapse into a single margin.
+    Top and bottom margins of elements are sometimes collapsed into a single margin that is equal to the largest of the two margins.
+    -->
+
+    <h3 style="margin-bottom: 50px;">This is used to set the margin 50px bottom</h3>
+    <h3 style="margin-bottom: 20px;">This is used to set the mergin 20px top</h3>
+    <p>In the final result we see that the total margin between the first and second h3 tage is 50px margin </p>
+</body>
+</html>
