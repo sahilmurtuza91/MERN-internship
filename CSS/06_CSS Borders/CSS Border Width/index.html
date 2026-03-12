@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Border Width</title>
+    <style>
+        p.one{
+            border-style: dotted;
+            border-width: 5px 10px;
+             /* this firs dimensioon gives the width to top-bottom and the second gives to right-left*/
+            border-color: tomato;
+        }
+
+        p.two{
+            border-style: solid;
+            border-width: 25px 10px 4px 35px;
+            /* 25px top, 10px right, 4px bottom and 35px left*/
+            border-color: red green yellow blue;
+        }
+
+        p.three{
+            border-style: dashed;
+            border-top-width: 20px;
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>CSS Border Width</h2>
+
+    <p class="one">Top bottom border width</p>
+    <p class="two">Top, right, bottom and left width</p>
+    <p class="three">set the border width in a specific direction </p>
+</body>
+</html>
