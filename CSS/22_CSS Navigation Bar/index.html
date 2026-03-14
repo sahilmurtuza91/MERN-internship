@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Navigatioon bar</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /*This is for the vertical nav bar*/
+        /* ul{
+            background-color:navy;
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+            height: 20px;
+            padding: 5px;
+            width: 30px;
+        }
+        li:hover{
+            background-color: blue;
+            height: 20px;
+            padding: 5px;
+            width: 50px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        } */
+
+        /*this is for the horizental nav bar*/
+
+        nav{
+            background-color: navy;
+            padding: 15px;
+        }
+        nav ul{
+            display: flex;
+            justify-content: start;
+            list-style: none;
+        }
+        nav li{
+            margin:0 10px;
+            
+        }
+        li a{
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+        }
+        .right{
+            margin-left: auto;
+        }
+        a:hover{
+            background-color: blue;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#News">News</a></li>
+            <li><a href="#Contact">Contact</a></li>
+            <li class="right"><a href="#About">About</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

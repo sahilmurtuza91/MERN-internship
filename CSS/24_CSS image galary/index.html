@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Css Image galary</title>
+    <style>
+        div.gallery{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+        .gallery-item{
+            width: 180px;
+            margin: 5px;
+            border: 2px solid #ccc;
+        }
+        .gallery-item:hover{
+            border: 2px solid #777;
+        }
+        img{
+            width: 100%;
+            height: auto;
+        }
+        .gallery-item, .desc{
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gallery">
+        <div class="gallery-item">
+            <a target="_blank"
+                href="https://images.pexels.com/photos/158063/bellingrath-gardens-alabama-landscape-scenic-158063.jpeg">
+                <img src="https://images.pexels.com/photos/158063/bellingrath-gardens-alabama-landscape-scenic-158063.jpeg"
+                    alt="Cinque Terre" width="600" height="400" />
+            </a>
+            <div class="desc">Cinque Terre</div>
+        </div>
+
+        <div class="gallery-item">
+            <a target="_blank"
+                href="https://images.pexels.com/photos/68147/waterfall-thac-dray-nur-buon-me-thuot-daklak-68147.jpeg">
+                <img src="https://images.pexels.com/photos/68147/waterfall-thac-dray-nur-buon-me-thuot-daklak-68147.jpeg"
+                    alt="Forest" width="600" height="400" />
+            </a>
+            <div class="desc">Green Forest</div>
+        </div>
+
+        <div class="gallery-item">
+            <a target="_blank" href="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg">
+                <img src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg" alt="Northern Lights"
+                    width="600" height="400" />
+            </a>
+            <div class="desc">Northern Lights</div>
+        </div>
+
+        <div class="gallery-item">
+            <a target="_blank" href="https://images.pexels.com/photos/33545/sunrise-phu-quoc-island-ocean.jpg">
+                <img src="https://images.pexels.com/photos/33545/sunrise-phu-quoc-island-ocean.jpg" alt="Mountains"
+                    width="600" height="400" />
+            </a>
+            <div class="desc">Mountains</div>
+        </div>
+    </div>
+</body>
+
+</html>

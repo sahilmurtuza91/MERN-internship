@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewporflet" content="width=device-width, initial-scale=1.0">
+    <title>CSS Pagination</title>
+    <style>
+        .pagination{
+            display:flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+        .pagination li a{
+            display: block;
+            padding: 8px 12px;
+            color: black;
+            border: 1px solid gray;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        .pagination li a.active{
+            background-color: #4CAF50;
+            color: white;
+        }
+        .pagination li a:hover:not(.active){
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <h2>A Simple Pagination</h2>
+
+<ul class="pagination">
+  <li><a href="#">&laquo;</a></li>
+  <li><a href="#">1</a></li>
+  <li><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+  <li><a href="#">5</a></li>
+  <li><a href="#">&raquo;</a></li>
+</ul>
+</body>
+</html>

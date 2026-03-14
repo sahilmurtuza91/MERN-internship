@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            height: 100vh;
+            width: 100vw;
+            background-color: beige;
+            border: 5px solid black;
+        }
+        p{
+            color: white;
+           text-align: center;
+           margin: auto;
+        }
+        .box,.box2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box {
+            height: 80px;
+            width: 350px;
+            background-color: blue;
+            border: 3px solid yellow;
+            border-radius: 10px;
+            margin: 10px;
+            position: relative;
+            animation-name: box-movement;
+            animation-duration: 4s;
+            animation-iteration-count: 2;
+            animation-timing-function: linear;
+            /* animation-direction:alternate-reverse; */
+            /* animation-fill-mode:both; */
+            
+        }
+
+        @keyframes box-movement {
+
+            from {
+                top: 0;
+                left: 0;
+            }
+
+            to {
+
+                left: 900px;
+                top: 0;
+
+            }
+
+        }
+
+        .box2 {
+            height: 50px;
+            width: 350px;margin: 10px;
+            border: 2px solid black;
+            border-radius: 5px;
+            background-color: violet;
+            position: relative;
+            animation-name: box2-movement;
+            animation-duration: 10s;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+            
+
+        }
+
+        @keyframes box2-movement {
+            0% {
+                left: 0;
+                top: 0px;
+            }
+
+            25% {
+                left: 900px;
+                top: 0px;
+            }
+            50%{
+                left:900px;
+                top:400px;
+            }
+            75%{
+                left:0;
+                top:400px;
+            }
+            100%{
+                left:0;
+                top:0;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box"><p>Box 1</p></div>
+        <div class="box2"><p>Box 2</p></div>
+    </div>
+</body>
+
+</html>

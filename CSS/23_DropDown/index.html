@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DropDown</title>
+    <style>
+        nav {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 8px;
+            background-color: rgb(120, 120, 191);
+            height: 40px;
+            align-items: center;
+            padding: 0 4px;
+            color: white;
+        }
+        .main-nav{
+            display: flex;
+            gap: 2rem;
+            margin-right: 5px;
+        }
+        select{
+            background-color:rgb(120, 120, 191);
+            color: white;
+        }
+        .main-nav a{
+            text-decoration: none;
+            color: white;
+        }
+        .box{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+        }
+
+        .box:hover{
+            background-color: rgb(102, 102, 190);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div>Sahil Murtuza</div>
+        <div class="main-nav">
+           <div class="box"> <a href="#home">Home</a></div>
+           <div class="box"> <a href="#about">About</a></div>
+           <div class="box">
+             <a>
+                <select name="link" id="link">
+                    <option value="link1" selected>Link1</option>
+                    <option value="link2">Link2</option>
+                    <option value="liink2">Link3</option>
+                </select>
+            </a>
+           </div>
+            <div class="box">
+                <a href="#contact">Contacts</a>
+            </div>
+        </div>
+    </nav>
+</body>
+
+</html>

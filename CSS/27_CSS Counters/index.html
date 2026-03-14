@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Counters</title>
+    <style>
+        body {
+            counter-reset: section;
+            counter-reset: decSec;
+        }
+
+        h2::before {
+            counter-increment: section;
+            content: "Section " counter(section)" : ";
+        }
+        .desc h2::before{
+            counter-increment: decSec -1;
+            content: "Section " counter(decSec)" : ";
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Using CSS Counters</h1>
+    <p>increasing the value</p>
+
+    <h2>HTML Tutorial</h2>
+    <p>Some description here...</p>
+
+    <h2>CSS Tutorial</h2>
+    <p>Some description here...</p>
+
+    <h2>JavaScript Tutorial</h2>
+    <p>Some description here...</p>
+
+    <h2>Python Tutorial</h2>
+    <p>Some description here...</p>
+
+    <h2>SQL Tutorial</h2>
+    <p>Some description here...</p>
+
+    <!--Decreasing the counter value-->
+    <div class="desc">
+        <h1>Using CSS Counters</h1>
+        <p>decreasing the value</p>
+
+        <h2>HTML Tutorial</h2>
+        <p>Some description here...</p>
+
+        <h2>CSS Tutorial</h2>
+        <p>Some description here...</p>
+
+        <h2>JavaScript Tutorial</h2>
+        <p>Some description here...</p>
+
+        <h2>Python Tutorial</h2>
+        <p>Some description here...</p>
+
+        <h2>SQL Tutorial</h2>
+        <p>Some description here...</p>
+    </div>
+
+</body>
+
+</html>

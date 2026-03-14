@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opacity</title>
+    <style>
+        .box{
+            height: 200px;
+            width: 200px;
+            background-color: rgb(51, 136, 81);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main-box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 600px;
+        }
+        .box1{
+            opacity: 0.8;
+        }
+        .box2{
+            opacity: 0.6;
+        }
+        .box3{
+            opacity: 0.4;
+        }
+        .box4{
+            opacity: 0.2;
+        }
+        .box>p{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-box">
+        <div class="box1 box"><p>box1</p></div>
+        <div class="box2 box"><p>box2</p></div>
+        <div class="box3 box"><p>box3</p></div>
+        <div class="box4 box"><p>box4</p></div>
+    </div>
+</body>
+</html>

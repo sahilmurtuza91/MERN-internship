@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS object-position Property</title>
+    <style>
+        .image-container{
+            width: 200px;
+            height: 300px;
+            border: 2px solid black;
+            border-radius: 6px;
+        }
+        .image-container img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 20% 140%;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>CSS object-position Property</h1>
+
+    <!--
+    The object-position property in CSS is used to control the position of an image or video inside its container.
+    It usually works together with object-fit.
+
+    Basic Idea:->
+    When an image does not fit perfectly in its container, object-position decides which part of the image should be visible.
+    
+    Syntax:-> object-position: horizontal vertical;
+    -->
+
+    <h2>Using object-position</h2>
+
+    <p>
+      Here we will use the object-position property to position the image so
+      that the famous Eiffel Tower is in center:
+    </p>
+
+    <div class="image-container">
+      <img src="https://www.w3schools.com/css/paris.jpg" alt="Paris" width="400" height="300" />
+    </div>
+
+    <p>Original image:</p>
+    <img src="https://www.w3schools.com/css/paris.jpg" alt="Paris" width="400" height="300" />
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Item</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .flex-container{
+            display: flex;
+            background-color: blue;
+            flex-wrap: wrap;
+        }
+        .flex-container div{
+            height: 200px;
+            width: 200px;
+            background-color: antiquewhite;
+            color: black;
+            margin: 10px;
+            border: 2px solid black;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div style="order: 3; flex-grow: 1;">1</div>
+        <div style="order: 4; flex-grow: 2;">2</div>
+        <div style="order: 2; ">3</div>
+        <div style="order: 1; flex-shrink: 1;">4</div>
+    </div>
+</body>
+</html>

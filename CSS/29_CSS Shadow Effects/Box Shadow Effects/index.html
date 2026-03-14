@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box-shadow</title>
+    <style>
+        .first-box {
+            width: 300px;
+            height: 200px;
+            padding: 15px;
+            margin: 20px;
+            background-color: coral;
+            box-shadow: 10px 10px;
+        }
+
+        .second-box {
+            width: 300px;
+            height: 200px;
+            padding: 15px;
+            margin: 20px;
+            background-color: coral;
+            box-shadow: 10px 10px lightblue;
+        }
+
+        .third-box {
+            width: 300px;
+            height: 200px;
+            padding: 15px;
+            margin: 20px;
+            background-color: coral;
+            box-shadow: 10px 10px 5px lightblue;
+        }
+
+        .fourth-box {
+            width: 300px;
+            height: 200px;
+            padding: 15px;
+            margin: 20px;
+            background-color: coral;
+            box-shadow: 10px 10px 5px lightblue inset;
+        }
+        div.polaroid{
+            width: 250px;
+            box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            text-align: center;
+        }
+        div.container{
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>The box-shadow Property</h1>
+    <div class="first-box">This is a div element with a box-shadow</div>
+
+    <div class="second-box">This is a div element with a box-shadow with shadow color</div>
+
+    <div class="third-box">This is a div element with a box-shadow, shadow color and blurred effect</div>
+
+
+    <div class="fourth-box"> element with a blurred, lightblue, inset box-shadow</div>
+
+    <hr>
+
+    <h2>Create Polaroid Images</h2>
+
+    <p>The box-shadow property can be used to create polaroid images:</p>
+
+    <div class="polaroid">
+        <img src="https://www.w3schools.com/css/rock600x400.jpg" alt="Norway" style="width:100%">
+        <div class="container">
+            <p>Hardanger, Norway</p>
+        </div>
+    </div>
+</body>
+
+</html>

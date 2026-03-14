@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @property --rotate-angle{
+            syntax: "<angle>";
+                inherits: false;
+                initial-value: 0deg;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            transform: rotate(var(--rotate-angle));
+            transition: --rotate-angle 1s;
+        }
+        .box:hover{
+            --rotate-angle:180deg;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    The @property rule in CSS is used to define custom CSS properties (variables) with more control.
+
+    synatx:->
+
+    @property --variable-name {
+    syntax: "<type>";
+    inherits: true | false;
+    initial-value: value;
+    }
+    -->
+    <div class="box">
+
+    </div>
+</body>
+</html>

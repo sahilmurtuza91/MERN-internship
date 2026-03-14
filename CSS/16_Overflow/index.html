@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: row;
+        }
+        .box{
+            height: 200px;
+            width: 200px;
+            border: 2px solid black;
+            margin: 10px;
+        }
+        .first-box{
+            background-color: antiquewhite;
+            overflow: visible;
+        }
+        .second-box{
+            background-color: aqua;
+            overflow: hidden;
+        }
+        .third-box{
+            background-color: blueviolet;
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+    <div class="first-box box">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate expedita delectus quo blanditiis adipisci officiis accusamus earum vero eaque nisi quaerat nam dolorum, perferendis quam harum dolor repellendus aut doloremque suscipit aspernatur cum dolores asperiores beatae neque? Pariatur, aut odit incidunt dicta deserunt iste, at laborum necessitatibus consequatur numquam laudantium minus laboriosam ipsam expedita. Eligendi, fugit iste molestias officia earum quae! Voluptates vitae voluptate similique adipisci voluptatum, unde ea repudiandae quos fuga, architecto veniam. Dolor, doloribus vitae a dolorem ea eos quos? Facere amet nemo aut dolores sint suscipit pariatur, repudiandae reprehenderit consectetur alias non ab temporibus recusandae dolor magni.</p>
+    </div>
+
+    <div class="second-box box">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque eveniet autem dolores animi qui adipisci voluptatem laudantium eum nemo, temporibus alias libero inventore rem illo ipsam eaque itaque non cum harum quo, aliquid dolorum! Tenetur, vitae veniam! Dolore, libero. Corrupti eos nostrum blanditiis veritatis dolore repellat dolorem, possimus ratione error odio, architecto non iste reprehenderit voluptatibus deleniti quae totam id fugit sed ipsum aliquid ullam doloremque magni. Id consectetur reprehenderit officia ad odio sint, ipsam cupiditate impedit aspernatur nihil! Quidem cumque ea laboriosam quod corrupti asperiores excepturi omnis voluptatem est incidunt beatae debitis, adipisci blanditiis rem minima modi eos delectus!</p>
+    </div>
+
+    <div class="third-box box">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure a ex molestias, cumque in, pariatur aspernatur repudiandae sed facere nulla sint? Possimus modi, corrupti consectetur maxime voluptates a fuga velit minima, vitae deserunt explicabo magni officiis consequatur voluptatem, aliquid tempora temporibus laborum. Facilis a quia ipsum doloribus aliquid, molestiae quasi dolorum, esse reiciendis quae perferendis fuga natus nobis quisquam? Illum officia quos corrupti perspiciatis? Tempora error, voluptatibus quibusdam excepturi optio cumque eum. Adipisci facilis sint magni asperiores repellat necessitatibus tenetur quia quasi, totam, mollitia dolores consectetur temporibus minus praesentium nihil maxime aperiam repudiandae iusto? Itaque accusantium accusamus molestias error sit.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute Selector</title>
+    <style>
+        a[target] {
+            background-color: yellow;
+        }
+
+        [class^="par"] {
+            background-color: pink;
+        }
+
+        [class$="test"] {
+            background-color: yellow;
+        }
+        [class*="za"]{
+            background-color: red;
+        }
+
+        input[type="text"]{
+            background-color: aqua;
+            width: 200px;
+            height: 50px;
+        }
+        input[type="button"]{
+            width: 100px;
+            pad: 6px;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://www.google.com" target="_blank">Google</a>
+    <a href="https://yputube.com">youtube</a>
+    <a href="https://facebook.com" target="_blank">facebook</a>
+
+
+    <!--
+    CSS [attribute^="value"] Selector:->
+
+    selector is used to select elements with the specific attribute, whose value starts with a specific value.
+    -->
+
+    <div>
+        <p class="par">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus sint facere aut, debitis
+            voluptatibus eaque dolore voluptas minus fugit quae inventore, esse aliquid! Quam debitis dolorem
+            accusantium vitae, magnam eaque.</p>
+        <p class="para-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa voluptate in labore
+            obcaecati, officia exercitationem excepturi expedita rerum, modi dolore possimus dicta quo praesentium nulla
+            quod vitae? Recusandae, sit praesentium.</p>
+        <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex veritatis maxime quisquam id,
+            aperiam esse ut blanditiis expedita omnis voluptatem? Nobis quasi ipsam, error fuga ex reiciendis ea
+            obcaecati adipisci.</p>
+    </div>
+
+    <!--
+    CSS [attribute$="value"] Selector:->
+    selector is used to select elements whose attribute value ends with a specific value.
+    -->
+    <div class="first_test">The first div element.</div>
+    <div class="second">The second div element.</div>
+    <div class="my-test">The third div element.</div>
+    <p class="mytest">This is some text in a paragraph.</p>
+
+    <!--
+    CSS [attribute*="value"] Selector:->
+    selector is used to select elements whose attribute value contains a specific value.
+    -->
+
+    <h2>CSS [attribute*="value"] Selector</h2>
+
+<div class="first_test">The first div element.</div>
+<div class="secozand">The second div element.</div>
+<div class="my-test">The third div element.</div>
+<p class="mytzaest">This is some text in a paragraph.</p>
+
+<!--The CSS attribute selectors can be useful for styling form elements, based on input type:-->
+
+
+<h2>Style Form Elements with Attribute Selectors</h2>
+
+<form name="input" action="" method="get">
+  Firstname: <input type="text" name="Name" value="Peter" size="20"><br>
+  Lastname: <input type="text" name="Name" value="Griffin" size="20"><br><br>
+  <input type="button" value="Button">
+</form>
+
+
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100vw;
+        height: 100vh;
+        background-color: blue;
+        padding: 2rem;
+        display: grid;
+        row-gap: 1rem;
+        column-gap: 1rem;
+      }
+      .container div {
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        border-radius: 5px;
+        transition: all;
+        transition-duration: 2s;
+        transition-timing-function: ease-in;
+      }
+
+      @media screen and (min-width: 600px) {
+        .container {
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(4, 1fr);
+        }
+        .headre {
+          grid-column-start: 1;
+          grid-column-end: 4;
+        }
+        .footer {
+          grid-column-start: 1;
+          grid-column-end: 4;
+        }
+        .sidebar {
+          grid-row-start: 2;
+          grid-row-end: 4;
+        }
+        .main-content {
+          grid-column-start: 2;
+          grid-column-end: 4;
+        }
+      }
+      .container div:hover{
+        /* background-image: linear-gradient(to right, white, red); */
+        background-color: whitesmoke;
+        color: black;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="headre">Header</div>
+      <div class="sidebar">sidebar</div>
+      <div class="main-content">content</div>
+      <div>content 2</div>
+      <div>content 3</div>
+      <div class="footer">footer</div>
+    </div>
+  </body>
+</html>

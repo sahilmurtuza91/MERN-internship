@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #grad1 {
+            height: 200px;
+            background-image: linear-gradient(to top, red, yellow);
+        }
+
+        #grad2 {
+            height: 200px;
+            background-image: linear-gradient(to right, red, yellow);
+        }
+
+        #grad3 {
+            height: 200px;
+            background-image: linear-gradient(to bottom right, red, yellow);
+        }
+
+        #grad4 {
+            height: 200px;
+            background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+        }
+
+        #grad5 {
+            height: 200px;
+            background-image: radial-gradient(red, yellow, green);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Linear Gradient - Bottom to Top</h1>
+    <p>This linear gradient starts red at the bottom, transitioning to yellow at the top:</p>
+
+    <div id="grad1"></div>
+    <!--from left to right-->
+    <h1>Linear Gradient - Left to Right</h1>
+    <p>This linear gradient starts red at the left, transitioning to yellow (to the right):</p>
+
+    <div id="grad2"></div>
+
+    <!-- for diagonal-->
+    <h1>Linear Gradient - Diagonal</h1>
+    <p>This linear gradient starts red at top left, transitioning to yellow (at bottom right):</p>
+
+    <div id="grad3"></div>
+
+    <!--Rainbow color or multiple color setup-->
+    <h1>Linear Gradient - left to right with multiple color</h1>
+    <div id="grad4" style="text-align:center;margin:auto;color:#888888;font-size:40px;font-weight:bold">
+        Rainbow Background
+    </div>
+    <hr>
+
+    <!-- Radial Gradient
+Syntax->
+ background-image: radial-gradient(shape size at position, start-color, ..., last-color);
+-->
+    <h1>Radial Gradient - Evenly Spaced Color Stops</h1>
+
+    <div id="grad5"></div>
+</body>
+
+</html>
