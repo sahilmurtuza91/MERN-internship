@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break</title>
+</head>
+<body>
+    <h2>Using of the break</h2>
+    <p id="demo"></p>
+
+    <p id="demo2"></p>
+
+
+    <script>
+        let text ="";
+        for(let i=0; i<10; i++){
+            if(i===4){
+                break;
+            }
+            text += "The Number is "+i + "<br>"
+        }
+        document.getElementById("demo").innerHTML = text;
+
+
+        let text1 ="";
+        for(let j =0; j<10; j++){
+            if(j===5){
+                continue;
+            }
+            text1+= "This is the number "+j +"<br>";
+        }
+        document.getElementById("demo2").innerHTML=text1
+    </script>
+</body>
+</html>

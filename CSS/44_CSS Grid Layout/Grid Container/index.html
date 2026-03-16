@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Container</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: antiquewhite;
+            font-family: Arial, sans-serif;
+        }
+        .first-main-container{
+         background-color: aqua;
+         height: 50vh;
+         width:100%;
+         padding: 1rem;
+         display: grid;
+         grid-template-columns: auto auto auto;
+         gap: 1rem;
+         justify-self: center;
+         align-self: center;
+         margin: 1rem;
+         border-radius: 1rem;
+        }
+        .first-main-container div{
+            background-color: blue;
+            border-radius: 5px;
+            display: grid;
+            place-items: center;
+            color: white;
+            font-weight: bolder;
+            font-size: 1.2rem;
+        }
+        .second-main-container{
+            background-color: rgb(146, 233, 233);
+            height: 50vh;
+            width:100%;
+            padding: 1rem;
+            display: inline-grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            justify-self: center;
+            align-self: center;
+            margin: 1rem;
+            border-radius: 1rem;
+            }
+        .second-main-container div{
+            background-color: brown;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            color: white;
+            font-weight: bolder;
+            font-size: 1.2rem;
+
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="first-main-container">
+            <div>Box 1.1</div>
+            <div>Box 1.2</div>
+            <div>Box 1.3</div>
+            <div>Box 1.4</div>
+            <div>Box 1.5</div>
+        </div>
+        <span>This the div which use display:grid</span>
+    </section>
+
+    <section>
+        <div class="second-main-container">
+            <div>Box 2.1</div>
+            <div>Box 2.2</div>
+            <!-- <div>Box 2.3</div>
+            <div>Box 2.4</div>
+            <div>Box 2.5</div> -->
+        </div>
+        <span>This is the div which uses the display:grid</span>
+    </section>
+</body>
+</html>

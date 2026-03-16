@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>introduction to Js</title>
+</head>
+<body>
+    <h1 id="first-heading">Here We learn about the JavaScript</h1>
+
+    <p class="demo">This is the page of javaScript</p>
+
+    <!--Js can change the HTML Element-->
+    <button type="button" onclick="document.getElementsByClassName('demo')[0].innerHTML = 'JavaScript!'">Click Me</button><br><br>
+
+    <!--Js can chnage the HTMl Style-->
+    <button type="button" onclick="document.getElementById('first-heading').style.fontSize='35px'">Click me to change the font size of the heading</button><br><br>
+    
+    <button type="button" onclick="document.getElementsByClassName('demo')[0].style.display='none'">Click me to hid the paragraph</button>
+
+    <!--
+    for the using of document.getElementById-> We don't need to use the index but in the case of document.getElementByClass we alway use the index because id represent a particular tag but the classes can use multiple-time in different tag.
+    -->
+</body>
+</html>

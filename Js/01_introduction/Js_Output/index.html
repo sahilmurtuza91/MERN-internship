@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Outpt</title>
+</head>
+<body>
+    <h1>JavaScript Display Possibilities</h1>
+    <hr>
+
+    <!--
+    1. Using innerHTML
+    innerHTML gets or sets the HTML content inside an element.
+    That means it can read or write HTML tags.
+    -->
+    <p class="demo"></p>
+
+    <!--
+    2. Using innerText
+    innerText gets or sets only the visible text inside an element.
+    It does NOT interpret HTML tags.
+    -->
+    <p class="demo"></p>
+
+    <!--
+    2. document.write
+    document.write() is a JavaScript method used to write content directly into the HTML page.
+    It writes text or HTML into the document while the page is loading.
+
+    The entire page content is replaced with thet content inside the document.write() because document.write() rewrtes the whole document after the page loads and remove all the existing HTMl content.
+    -->
+
+    <button type="button" onclick="document.write('This will remove all the HTML tag from the browser')">try it (document.write())</button>
+
+    <script>
+        // Using innerHTML
+        document.getElementsByClassName("demo")[0].innerHTML = "<b>This paragraph is added by using the innerHTMl</b>";
+
+        // Using innertext
+        document.getElementsByClassName("demo")[1].innerText = "<b>This paragraph is added by the help of innerText so that it can't process the HTML tags it uses it</b>"
+
+        // Using Window.aler()
+        // used to display the alert box
+        window.alert(5+6);
+
+        alert("This alert is shown by just normally using the alert")
+
+        // Using console.log()
+
+        console.log("hello World");
+        
+        //window.print() is a JavaScript method used to open the browser’s print dialog so the user can print the current webpage.
+
+        // Syntax: window.print()
+
+    </script>
+</body>
+</html>
