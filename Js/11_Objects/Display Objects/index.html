@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo3"></p>
+    <script>
+        // Create an Object
+        const person = {
+        name: "John",
+        age: 30,
+        city: "New York"
+        };
+
+        let text = person;
+        document.getElementById("demo").innerHTML = text; // this gives the output like [object Object]
+
+        // reson (innerHTML expects a string --> But person is an object, so JavaScript automatically converts it to a string. so that the defult result is "[object, object]" but terminal shows proper object Node.js does not convert the object to string)
+
+        // to fix this issue convett it to 1. Convert to JSON  (JSON.stringify(person)), 2. Pretty format (JSON.stringify(person, null, 2)), and the 3.(person.name + " " + person.age + " " + person.city;) manually 
+
+        let text2 = person.name+", " + person.age+", "+person.city;
+        document.getElementById("demo1").innerHTML = text2;
+
+
+        // other way using for in loop
+
+        let text3 ="";
+        for(let x in person){
+            text3 += person[x]+" ";
+        };
+        document.getElementById("demo3").innerHTML = text3
+    </script>
+</body>
+</html>
