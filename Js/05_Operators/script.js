@@ -148,7 +148,7 @@ console.log(user.address?.city);
 // 11. Bitwise Operators
 
 
-let p = 5; // 0101
+let p = 5; // 0101 
 let q = 3; // 0011
 
 console.log(p & q); // AND
@@ -169,6 +169,17 @@ let arr2 = [...arr1,4,5];
 console.log(arr2); 
 // spreads array elements
 
+
+//rest operator 
+const obj={
+    name:'mohit',
+    class:'12th',
+    rollno:10
+}
+const {name,...rest}=obj;
+console.log(rest);
+console.log(name);
+console.log();
 
 let arr3 = arr1 //this copies the reference (Both arr3 and arr1 variable point to same array in memory)
 arr3.push(10);

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is the table page</h1>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p>Function can all from anywhere</p>
+    <p id="demo4"></p>
+    <button onclick="showme()">click me </button>
+    <script>
+        
+        function table(x) {
+            let text = "";
+            for(let i=1; i<=10; i++){
+                let multipe = i*x;
+                // text += multipe + "<br>"
+                text += `${x} X ${i} = ${multipe} <br>`
+            }
+            return text;
+        }
+        function sayHello() {
+            return "Hello World";
+        }
+
+        document.getElementById("demo").innerHTML = table(2)
+
+        document.getElementById("demo1").innerHTML = "call the function without using () so that it return the fujction itself<br> <b>"+sayHello+"</b>";
+
+        document.getElementById("demo2").innerHTML = "call the function by using () so that it return it's value<br><b>"+sayHello()+"</b>";
+
+        function fun1() {
+            return "Sahil Murtuza"
+        }
+        function showme(){
+            document.getElementById("demo4").innerHTML = fun1();
+        }
+    </script>
+</body>
+</html>
