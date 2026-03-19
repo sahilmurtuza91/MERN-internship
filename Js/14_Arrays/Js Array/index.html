@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 </head>
 
@@ -37,7 +37,6 @@
 
         document.getElementById("demo2").innerHTML = text2;
 
-
         // Nested JavaScript Objects and Arrays.
         const myObj = {
             name: "jhon",
@@ -45,19 +44,19 @@
             cars: [
                 { name: "ford", models: ["Fiesta", "Focus", "Mustang"] },
                 { name: "BMW", models: ["320", "X3", "X5"] },
-                { name: "Fiat", models: ["500", "Panda"] }
-            ]
-        }
+                { name: "Fiat", models: ["500", "Panda"] },
+            ],
+        };
 
-        let x ="";
-            for(let i in myObj.cars){
-                x += "<h2>"+myObj.cars[i].name+ "</h2>";
-                
-                myObj.cars[i].models.forEach((value)=>{
-                    x+=value+"<br>";
-                });
-            }
-            document.getElementById("demo3").innerHTML = x;
+        let x = "";
+        for (let i in myObj.cars) {
+            x += "<h2>" + myObj.cars[i].name + "</h2>";
+
+            myObj.cars[i].models.forEach((value) => {
+                x += value + "<br>";
+            });
+        }
+        document.getElementById("demo3").innerHTML = x;
     </script>
 </body>
 
