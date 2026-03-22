@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body style="background-color: #414141; color: aliceblue">
+    <h2>Amazing Images</h2>
+
+    <div>
+        <ul id="images">
+            <li>
+                <img width="200px" height="200px" id="photoshop"
+                    src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="photoshop" />
+            </li>
+            <li>
+                <img width="200px" height="200px" id="japan"
+                    src="https://img.freepik.com/free-photo/lavender-field-sunset-near-valensole_268835-3910.jpg?semt=ais_hybrid&w=740&q=80"
+                    alt="" />
+            </li>
+            <li>
+                <img width="200px" height="200px" id="river"
+                    src="https://img.freepik.com/free-photo/closeup-scarlet-macaw-from-side-view-scarlet-macaw-closeup-head_488145-3540.jpg?semt=ais_hybrid&w=740&q=80"
+                    alt="" />
+            </li>
+            <li>
+                <img width="200px" height="200px" id="owl"
+                    src="https://static.vecteezy.com/system/resources/thumbnails/057/068/323/small/single-fresh-red-strawberry-on-table-green-background-food-fruit-sweet-macro-juicy-plant-image-photo.jpg"
+                    alt="" />
+            </li>
+            <li>
+                <img width="200px" height="200px" id="leaf"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmxbhQpDEuFsnVwrYGw3432VO3RCI_hVo71A&s"
+                    alt="" />
+            </li>
+            <li>
+                <a href="https://google.com" id="google" style="color: aliceblue">Google</a>
+            </li>
+        </ul>
+    </div>
+
+   
+
+    <script>
+        // document.getElementById("owl").onclick = function(){
+        //     alert("Owl clicked");
+        //     console.log("owl is clicked please wait...")
+        // }
+
+
+        // addEventListener
+        // type, timestamp, defaultPrevent
+        // target, toElement, srecElement, currentTarget
+        //clientX, clientY, screenX, screenY
+        // altkey, ctrkey, shiftkey, keyCode
+
+        // document.getElementById('images').addEventListener("click", function(){
+        //     console.log("Clicked inside the ul")
+        // },false)
+
+        // document.getElementById("owl").addEventListener('click', function (e) {
+        // //     // alert("owl clicked")
+        // //     // console.log(e);
+        //     e.stopPropagation(); // stops event bubbling (prevents event from going to parent elements)
+        //     console.log("owl clicked")
+        // }, false)// sometimes we skip this false (this is called capturin in that the object from lower to heighr means ) and when we use the true then it is bublimg and object goes from top to buttom
+
+        // document.getElementById("google").addEventListener("click", function(e){
+        //     console.log("Google clicked")
+        //    e.preventDefault();  // this prevent to visit the website
+        //    e.stopPropagation()// stop the propogation to go to object
+        // },false)
+
+
+        document.querySelector("#images").addEventListener("click", function(e){
+            // console.log(e)
+            // console.log(e.target);// give when we click so that evenlistener happen
+
+            console.log(e.target.parentNode); // this give the parent 
+            let removeitem = e.target.parentNode;
+            removeitem.remove(); // if we click on an li list then it will remove all the element
+            // another way
+            // removeitem.parentNode.removeChild(removeitem);
+
+
+        },false)
+    </script>
+</body>
+
+</html>

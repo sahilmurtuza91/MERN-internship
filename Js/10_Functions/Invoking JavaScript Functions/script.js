@@ -15,4 +15,21 @@ function fun1(){
 function fun2(){
     return fun1()
 }
-console.log(fun2())
+console.log(fun2());
+
+// Immediately Invoked function Expression
+(function(){
+    console.log("Immediately Invoked function Expression")
+})();
+((name)=>{
+    console.log("This is also a IIFE for the arrow function: ",name)
+})("Sahil");
+
+function fun(){
+    console.log(this);
+    console.log(typeof this);
+    console.log("This function is executed")
+}
+fun()
+console.log(this)
+console.log(typeof this);

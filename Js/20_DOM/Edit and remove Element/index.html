@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: #212121;color: #fff; ">
+    <ul class="laguage">
+        <li>JavaScript</li>
+    </ul>
+
+    <script>
+        /*
+        --innerHTML → parsing + unsafe
+        --createTextNode / textContent → faster + safe
+        */
+
+        // Add Elements
+        function addLanguage(sublanguage) { // this function will traversing every time so that it is not optimized
+            const li = document.createElement("li");
+            li.innerHTML = sublanguage;
+            document.querySelector(".laguage").appendChild(li);
+        }
+        addLanguage("Python");
+        addLanguage("typeScript");
+
+        // Optimized (same as above, just different style)
+        function addOptimizedLanguage(sublanguage) {
+            const li = document.createElement("li");
+            li.appendChild(document.createTextNode(sublanguage)); // more optimized then the innerHTML
+            document.querySelector(".laguage").appendChild(li);
+        }
+        addOptimizedLanguage("golang")
+
+        // Edit existing element
+        const secondlang = document.querySelector("li:nth-child(2)");
+        secondlang.innerHTML = "C++";
+        const newli = document.createElement("li");
+        newli.textContent = "Java";
+        secondlang.replaceWith(newli);
+
+        // edit 
+        const firstLang = document.querySelector("li:first-child");
+        firstLang.outerHTML = "<li>TypeScript</li>"
+
+        // remove
+        const lastlanguage = document.querySelector("li:last-child");
+        lastlanguage.remove();
+
+    </script>
+</body>
+
+</html>

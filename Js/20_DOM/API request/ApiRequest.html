@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    <!-- JSON formatter is used to read API data in better format-->
+
+
+    <script>
+        // used to get the data from the internet API
+        // 1. URL of API (from where we want data)
+        const requestUrl = "https://api.github.com/users/sahilmurtuza91"
+        // 2. Create a request object (tool to talk with server)
+        const xhr = new XMLHttpRequest(); // create request object(XMLHttpRequest --> old way to make API call)
+        // 3. Setup request (GET = we want to get data from server)
+        xhr.open('GET', requestUrl); // open connection
+        // 4. This function runs again and again when request state changes
+        xhr.onreadystatechange = function(){ // Listen for chnages
+             // Show current state (0 → 4)
+            console.log(xhr.readyState);
+            if(xhr.readyState === 4){
+                const data = JSON.parse(this.responseText); // convert from string to JSON
+                console.log(typeof data);
+                console.log(data.public_repos);
+            }
+        }
+        xhr.send(); // This actually sends request to server(withot this nothing happens).
+    </script>
+</body>
+</html>

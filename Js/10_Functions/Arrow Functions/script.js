@@ -31,7 +31,7 @@ const myFun1 = (x,y) => {x*y};
 console.log(myFun1(2,3));
 
 // This will return undefined
-// ]const myFun2 = (x,y) => return x*y// this gives undefined
+// const myFun2 = (x,y) => return x*y// this gives undefined
 
 // This will return the expected result
 const myFun3 = (x,y) => {return x*y};
@@ -90,3 +90,20 @@ const personr4 = {
     }
 };
 console.log(personr4.greet());
+
+
+// we can also use this 
+const addTwo = (num1, num2) => num1+num2;
+console.log(addTwo(2,3))
+
+const addTwo2 = (num1, num2) => (num1+num2);
+console.log(addTwo2(3,4));
+
+const add2Two = (num1, num2) =>{num1 + num2};
+console.log(add2Two(2,3)); // this gives undefined because of no retunr keyword
+
+//+++++++++++++++++++++++Retunr the object from the arrow function +++++++++++++++++
+
+
+const addTwoNum = () => ({name:"Sahil"}) // return object --> parentheses tell JavaScript--->("This is an object, not a function body")
+const addTwoNum1 = () => {return {name:"Sahil"}}// retrn object

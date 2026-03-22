@@ -1,0 +1,51 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <h1>learnig the Async -> setIntervala and clearInterval</h1>
+
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+        // setInterval(function(){
+        //     console.log("This is used for the continiously printing something")
+        // },2000)
+
+        const btnStart = document.getElementById("start");
+        btnStart.style.background = "#04AA6D";
+        btnStart.style.border = "none";
+        btnStart.style.padding = "10px";
+        btnStart.style.color = "white";
+
+        const btnStop = document.getElementById("stop");
+        btnStop.style.backgroundColor ="#f44336"
+        btnStop.style.border = "none";
+        btnStop.style.padding = "10px";
+        btnStop.style.color = "white";
+        
+
+        function printSomething(){
+            console.log("sahil", Date.now())
+        }
+        let intervaID;
+
+        // start button
+        document.getElementById("start").addEventListener("click",function(){
+           intervaID =  setInterval(printSomething,1000)
+           console.log("setInterval started")
+        })
+
+        // clearInterval(intervaID)
+        // stop button
+        document.getElementById("stop").addEventListener("click",function(){
+            clearInterval(intervaID)
+            console.log("setInterval is cleared");
+        })
+    </script>
+ </body>
+ </html>

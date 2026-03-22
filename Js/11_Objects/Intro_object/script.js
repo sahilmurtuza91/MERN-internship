@@ -51,3 +51,24 @@ const person2 = {
 };
 console.log(person2) // here call the whole object simuntaneously
 console.log(person2.fullName())
+
+
+const mySumbol = Symbol("key1");
+// Symbol("key1") creates a unique value
+// Even if you create another Symbol("key1"), it will be different
+
+const user = {
+    username : "Sahil123",
+    Website : "youtube",
+    class : "12th",
+    color : "Green",
+    [mySumbol] : "yourSymbol"
+}
+console.log(user);
+console.log(typeof user[mySumbol])
+
+
+const a = Symbol("key");
+const b = Symbol("key");
+
+console.log(a === b); // false 

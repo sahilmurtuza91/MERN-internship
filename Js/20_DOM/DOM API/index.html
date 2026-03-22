@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- DOM API (Application Programming Interface) is a set of Methods and Properties that allow JavaScript to change the content, structure, and style of any HTML elements. -->
+
+    <h1 id="title" class="heading" style="color:rebeccapurple">Hello World texting <span style="display: none;">Hello
+            span</span></h1>
+
+    <p id="demo">This is the first para</p>
+    <p id="demo1">This is the second para</p>
+    <div class="box first-box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+    <p id="text"></p>
+    <div id="divDemo">Hello <b>World</b></div>
+    <img id="img1" src="old.jpg">
+
+
+    <script>
+        // document.getElementsByTagName(name)	Find elements by tag name
+
+        document.getElementsByTagName("p"); // get all paragraph(p)
+        document.getElementsByTagName("div");
+
+        // document.getElementsByClassName(name)---> Find elements by class name
+        // const box1 =document.getElementsByClassName("first-box")[0];
+        // box1.style.color = "Green";
+
+        const para = document.getElementById("demo");
+        para.style.color = "red";
+
+        // document.querySelector(selector)-->	Find the first element that matches a CSS selector
+        const first1 = document.querySelectorAll("#demo1");
+        first1[0].style.backgroundColor = "Blue"
+
+        const heading1 = document.getElementById("title");
+        heading1.innerText; // gives tthe only visible text('Hello World texting') 
+        heading1.textContent; // gives the visible content as well as display invisible ('Hello World texting Hello span')
+        heading1.innerHTML; // gives the all content alsomg with the html inside it ('Hello World texting <span style="display: none;">Hello span</span>')
+
+        // document.querySelectorAll(selector)-->	Find all elements that match a CSS selector
+        const box = document.querySelectorAll("div"); // .querySelectorAll gives the node list which is similar to array but not array and forEach loop will work upon it
+        box.forEach((value) => {
+            console.log(value.innerHTML);
+            value.style.color="white";
+            value.style.backgroundColor = "black"
+        })
+
+
+        // ------------------------Accessing Element Content----------------------------
+
+       //  1. element.innerHTML(Ye poora HTML content deta hai include tags)
+        console.log(document.getElementById("divDemo").innerHTML); // Hello <b>World</b>
+
+       // 2. element.textContent (Ye sirf text deta hai --> HTML tags hata deta hai)
+       console.log(document.getElementById("divDemo").textContent) // Hello World
+
+
+       // -------------------------------Accessing Element Attributes-------------------------
+
+       // HTML element ke attributes (jaise id, class, style, src, href, etc.) ko access ya change karna
+
+
+
+       // 1. element.attribute -->kisi attribute ki value ko change karna
+        const img = document.getElementById("img1");
+        imf.scr = "new.jpg"
+    </script>
+</body>
+
+</html>
