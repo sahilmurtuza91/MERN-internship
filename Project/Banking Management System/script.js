@@ -155,7 +155,7 @@ function withdrawMoney(user) {
     let amount = Number(prompt('Entre amount to withdraw: '));
 
     // check amount is positive
-    while(isNaN(amount) || amount <= 0) {
+    while (isNaN(amount) || amount <= 0) {
         console.log("Invalid amount");
         amount = Number(prompt('Entre valid amount to withdraw: '));
     }
@@ -184,15 +184,15 @@ function amountValidity(amount) {
     // amount and its type validation
     while (amount <= 0 || isNaN(amount)) {
         console.log("Invalid Amount");
-        amount = Number(prompt("Enter loan amount: "));
+        amount = Number(prompt("Enter loan amount(₹): "));
     }
     // check bank has sufficient fund to give loan
     while (bankBalance < amount) {
         console.log(" Bank has insufficient funds");
-        amount = Number(prompt("Enter smaller loan amount: "));
+        amount = Number(prompt("Enter smaller loan amount(₹): "));
         while (amount <= 0 || isNaN(amount)) {
             console.log("Invalid Amount");
-            amount = Number(prompt("Enter loan amount: "));
+            amount = Number(prompt("Enter loan amount(₹): "));
         }
     }
     return amount;
@@ -225,15 +225,14 @@ function applyLoan(user) {
     console.log("4. Back")
 
     let choice = Number(prompt("Select loan type: "));
-    if(choice === 4){
+    while (choice < 1 || choice > 4 || isNaN(choice)) {
+        console.log("Select a valid loan: ");
+        choice = Number(prompt("Select loan type: "));
+    }
+    if (choice === 4) {
         return;
     }
-    let type = choice -1;
-    while (type < 0 || type > 2) {
-        console.log("Select a valid loan: ");
-        type = Number(prompt("Select loan type: ")) - 1;
-
-    }
+    let type = choice - 1;
 
     // check active loan
     if (user.loanStatus[type]) {
@@ -241,7 +240,7 @@ function applyLoan(user) {
         prompt("Press Enter to continue...")
         return;
     }
-    let amount = amountValidity(Number(prompt("Enter loan amount: ")));
+    let amount = amountValidity(Number(prompt("Enter loan amount(₹): ")));
 
     let month = Number(prompt("Entre the month (1-36): "));
     while (month < 1 || month > 36 || isNaN(month)) {
@@ -266,8 +265,8 @@ function applyLoan(user) {
     bankBalance -= amount;
 
     console.log("Loan approved successfully");
-    console.log(`Total payable amount: ${totalAmount}`);
-    console.log(`EMI ${emi} for ${month} months`);
+    console.log(`Total payable amount: ₹${totalAmount}`);
+    console.log(`EMI ₹${emi} for ${month} months`);
     prompt("Press Enter to continue...")
 }
 
@@ -278,13 +277,17 @@ function payEMI(user) {
     console.log("1. Home Loan");
     console.log("2. Business Loan");
     console.log("3. Education Loan");
+    console.log("4. Back")
 
-    let type = Number(prompt("Select loan type: ")) - 1;
-
-    while (type < 0 || type > 2) {
+    let choice = Number(prompt("Select loan type: "));
+    while (choice < 1 || choice > 4 || isNaN(choice)) {
         console.log("Select a valid loan: ");
-        type = Number(prompt("Select loan type: ")) - 1;
+        choice = Number(prompt("Select loan type: "));
     }
+    if (choice === 4) {
+        return;
+    }
+    let type = choice - 1;
 
     if (!user.loanStatus[type]) {
         console.log("No active loan");
@@ -298,8 +301,8 @@ function payEMI(user) {
         prompt("Press Enter to continue...");
         return;
     }
-    // update the user
 
+    // update the user
     user.Balance = Number((user.Balance - emi).toFixed(2));
     bankBalance += emi;
     user.loanTotals[type] = Number((user.loanTotals[type] - emi).toFixed(2));
@@ -315,7 +318,7 @@ function payEMI(user) {
         console.log("Loan is fully completed, no remaining loan left.")
     }
     else {
-        console.log(`Remainig Amount: ${user.loanTotals[type].toFixed(2)}`);
+        console.log(`Remainig Amount: ₹${user.loanTotals[type].toFixed(2)}`);
         console.log(`Remainig EMI: ${user.emiCount[type]}`);
     }
     prompt("Press Enter to continue...");
@@ -388,7 +391,7 @@ function updateUserDetails(user) {
                 if (!phoneRegex.test(newNumber)) {
                     console.log("Invalid Number");
                     prompt("Press Enter to continue...");
-                    return;
+                    break;
                 }
 
                 // check duplicate
@@ -441,7 +444,7 @@ function accountDetails(user) {
             let month = emi % 12;
             console.log(`Timi Remaining: ${year} years ${month} months`)
         }
-        else{
+        else {
             console.log("NO active loans");
         }
     }
