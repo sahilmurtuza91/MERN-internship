@@ -39,7 +39,7 @@ function Dashboard() {
       <p className=' text-white text-2xl font-bold pl-2'>Dashboard</p>
       <div className="max-w-7xl mx-auto">
         <StatsCards />
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6 px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6 px-4 ">
           <UpNextCard />
           <WeeklyChart />
           <CategoryPieChart />

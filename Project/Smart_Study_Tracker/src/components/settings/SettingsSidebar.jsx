@@ -52,7 +52,7 @@ function SettingsSidebar({ open, onClose }) {
     <>
       <div
         onClick={onClose}
-        className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-all duration-300 ${open ? "opacity-100 visible" : "opacity-0 invisible"}
+        className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-all duration-500 ${open ? "opacity-100 visible" : "opacity-0 invisible"}
         `}
       />
       <div
@@ -65,7 +65,7 @@ function SettingsSidebar({ open, onClose }) {
             <CloseIcon />
           </button>
         </div>
-        <div className="p-4 flex flex-col gap-6 overflow-y-auto flex-1">
+        <div className="p-4 flex flex-col gap-6 overflow-y-auto flex-1 scrollbar-thin">
           <ProfileSection
             setIsDirty={setIsDirty}
             localProfile={localProfile}
