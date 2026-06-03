@@ -1,5 +1,8 @@
 const fs = require("fs");
 
+const os = require("os");
+console.log(os.cpus().length); // gives the lenght of the cpu
+
 // Write operation on file 
 
 // synchronous ---> execute one after another (Blocking)
