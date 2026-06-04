@@ -1,0 +1,11 @@
+1780559622476: GET: /api/users 
+1780559656604: GET: /api/users/102 
+1780559671923: GET: /api/users/101 
+1780559764216: POST: /api/users 
+1780559780051: DELETE: /api/users/1 
+1780559826901: IP Address: ::1 : GET: /api/users/102 
+1780559912534: IP Address: ::1 : GET: /api/users/102 
+1780559923296: IP Address: ::1 : GET: /api/users/101 
+1780560787771: IP Address: ::1 : POST: /api/users 
+1780560797679: IP Address: ::1 : GET: /api/users/ 
+1780561315476: IP Address: ::1 : GET: /api/users/ 
