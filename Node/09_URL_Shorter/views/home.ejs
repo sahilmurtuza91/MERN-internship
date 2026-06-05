@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+
+<body>
+    <h1>Welcome to shortURl page</h1>
+    <% if (typeof id !== "undefined")  { %>
+        <p>
+            URL Generated: http://localhost:8001/ShortUrl/<%= id %>
+        </p>
+    <% } %>
+            <form method="post" action="/ShortUrl">
+                <label>Enter your Original URL</label>
+                <input type="text" name="url" placeholder="https://example.com" />
+                <button type="submit">Generate URL</button>
+            </form>
+</body>
+
+</html>
