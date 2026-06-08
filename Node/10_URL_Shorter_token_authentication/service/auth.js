@@ -9,7 +9,7 @@ function setUser(user){
     const payload = {
         _id: user._id,
         email:user.email,
-        role:user.role,
+        role:user.role, // this help for the role based authorization
     };
     
     return jwt.sign(payload, secret); // Create and return signed JWT
