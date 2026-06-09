@@ -1,60 +1,59 @@
-const { getUser } = require("../service/auth")
-const User = require("../models/user")
+const { getUser } = require("../service/auth");
+const User = require("../modles/user");
 
-async function checkForAuthentication(req, res, next) {
+async function checkAuthentication(req, res, next) {
     try {
-        const token = req.cookies.uid;
+        const token = req.cookies.token;
 
         if (!token) {
             return res.status(401).json({
                 success: false,
-                statusCode:401,
+                statusCode: 401,
                 message: "Authentication required",
+                data: null,
             });
         }
 
-        const decoded = getUser(token);
+        const decode = getUser(token);
 
-        if (!decoded) {
+        if (!decode) {
             return res.status(401).json({
                 success: false,
-                statusCode:401,
-                message: "Invalid or expired token",
+                statusCode: 401,
+                message: "Invalid token or Expired token",
+                data: null,
             });
         }
 
-        const user = await User.findById(decoded._id);
+        const user = await User.findById(decode._id).select("-password");
 
         if (!user) {
             return res.status(404).json({
                 success: false,
-                statusCode:404,
+                statusCode: 404,
                 message: "User not found",
+                data: null,
             });
         }
 
         req.user = user;
-
         next();
-
     } catch (error) {
-        console.error(error);
-
         return res.status(500).json({
             success: false,
-            statusCode:500,
-            message: "Internal Server Error",
-        });
+            statusCode: 500,
+            message: "server error",
+            data: null,
+        })
     }
 }
 
-
-function restricTo(roles = []) {
+function roleBaseRestriction(roles = []) {
     return function (req, res, next) {
         if (!req.user) {
             return res.status(401).json({
                 success: false,
-                statusCode:401,
+                statusCode: 401,
                 message: "Please login first",
             });
         }
@@ -62,8 +61,8 @@ function restricTo(roles = []) {
         if (!roles.includes(req.user.role)) {
             return res.status(403).json({
                 success: false,
-                statusCode:403,
-                message: "Access denied",
+                statusCode: 403,
+                message: "Access denied: Unauthorized role",
             });
         }
         return next();
@@ -71,6 +70,6 @@ function restricTo(roles = []) {
 }
 
 module.exports = {
-    checkForAuthentication,
-    restricTo,
+    checkAuthentication,
+    roleBaseRestriction,
 }

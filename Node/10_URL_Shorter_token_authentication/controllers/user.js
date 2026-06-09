@@ -12,6 +12,7 @@ async function handleUserSignUP(req, res) {
 
         if (!name || !email || !password) {
             return res.status(400).json({
+                success:false,
                 message: "All fields are required"
             });
         }
@@ -19,8 +20,9 @@ async function handleUserSignUP(req, res) {
         const existingUser = await User.findOne({ email });
 
         if (existingUser) {
-            return res.render("signup", {
-                error: "User already exists",
+            return res.status(409).json({
+                success:false,
+                message:"user already exist",
             });
         }
 
@@ -31,7 +33,8 @@ async function handleUserSignUP(req, res) {
             password: hashedPassword,
         });
 
-        return res.redirect("/login");
+        // return res.redirect("/login");
+        return res.status(201).redirect("/login");
 
     } catch (error) {
         if (error.name === "ValidationError") {
@@ -40,7 +43,7 @@ async function handleUserSignUP(req, res) {
             });
         }
 
-        console.log(error);
+        // console.log(error);
 
         return res.status(500).json({
             message: "Internal server Error",
@@ -57,6 +60,7 @@ async function handleUserLogin(req, res) {
         // console.log("Body data: ", req.body );
         if (!email || !password) {
             return res.status(400).json({
+                success:false,
                 message: "All fields are required"
             });
         }

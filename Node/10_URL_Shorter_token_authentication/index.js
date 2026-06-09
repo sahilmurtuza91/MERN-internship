@@ -28,7 +28,7 @@ app.use(checkForAuthentication);
 
 
 
-app.use("/ShortUrl",restricTo(["NORMAL", "ADMIN"]), urlRoute);
+app.use("/ShortUrl",checkForAuthentication, restricTo(["NORMAL", "ADMIN"]), urlRoute);
 app.use("/user", UserRoute);
 app.use("/", staticUrl); 
 

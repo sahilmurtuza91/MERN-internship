@@ -12,7 +12,7 @@ function setUser(user){
         role:user.role, // this help for the role based authorization
     };
     
-    return jwt.sign(payload, secret); // Create and return signed JWT
+    return jwt.sign(payload, secret, {expiresIn:"7d"}); // Create and return signed JWT
 }
 
 // Verify JWT token
