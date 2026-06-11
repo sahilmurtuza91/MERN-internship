@@ -1,0 +1,186 @@
+<nav class="navbar navbar-expand-lg sticky-top premium-nav">
+    <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand fw-black tracking-tight" href="/">
+            <i class="bi bi-terminal-inner me-2 text-indigo"></i>Blogify
+        </a>
+        
+        <!-- Mobile Trigger -->
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="bi bi-list"></span>
+        </button>
+
+        <!-- Links Grid -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4 gap-2">
+                <!-- HOME -->
+                <li class="nav-item">
+                    <a class="nav-link <%= typeof currentPath !== 'undefined' && currentPath === '/' ? 'active-link' : '' %>" href="/">
+                        <i class="bi bi-house-door me-1"></i> Home
+                    </a>
+                </li>
+
+                <!-- DYNAMIC CONDITIONAL LINKS BASED ON LOGGED IN USER -->
+                <% if (locals.user) { %>
+                    <li class="nav-item">
+                        <a class="nav-link <%= typeof currentPath !== 'undefined' && currentPath === '/blog/add-new' ? 'active-link' : '' %>" href="/blog/add-new">
+                            <i class="bi bi-plus-circle me-1"></i> Add Blog
+                        </a>
+                    </li>
+                <% } else { %>
+                    <li class="nav-item">
+                        <a class="nav-link <%= typeof currentPath !== 'undefined' && currentPath === '/users/signup' ? 'active-link' : '' %>" href="/users/signup">
+                            <i class="bi bi-person-plus me-1"></i> Create Account
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <%= typeof currentPath !== 'undefined' && currentPath === '/users/signin' ? 'active-link' : '' %>" href="/users/signin">
+                            <i class="bi bi-box-arrow-in-right me-1"></i> SignIn
+                        </a>
+                    </li>
+                <% } %>
+            </ul>
+            
+            <!-- Right-Side Profile Dropdown (Only appears if user is logged in) -->
+            <% if (locals.user) { %>
+                <div class="navbar-nav ms-auto align-items-center">
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle profile-trigger d-flex align-items-center gap-2" href="#" id="userDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="nav-avatar-circle">
+                                <%= user.fullName.charAt(0).toUpperCase() %>
+                            </div>
+                            <span class="text-white-50 fw-semibold"><%= user.fullName %></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end premium-dropdown" aria-labelledby="userDrop">
+                            <li>
+                                <a class="dropdown-item text-danger d-flex align-items-center gap-2" href="/users/logout">
+                                    <i class="bi bi-box-arrow-right"></i> Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</nav>
+
+<!-- HIGH CONTRAST DARK MODE ERROR MESSAGE BOX -->
+<% if (locals.error) { %>
+  <div class="container mt-4" style="max-width: 500px;">
+      <div class="alert custom-danger-alert d-flex align-items-center gap-2" role="alert">
+          <i class="bi bi-exclamation-triangle-fill fs-5"></i>
+          <div>
+              Invalid Email or password!
+          </div>
+      </div>
+  </div>
+<% } %>
+
+<style>
+    /* Navbar Smooth Blur Sheet */
+    .premium-nav {
+        background: rgba(11, 15, 25, 0.75) !important;
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 14px 0;
+        z-index: 1030;
+    }
+
+    .navbar-brand {
+        color: #ffffff !important;
+        font-weight: 800;
+        font-size: 1.35rem;
+        letter-spacing: -0.5px;
+    }
+
+    .text-indigo {
+        color: #818cf8;
+    }
+
+    .premium-nav .nav-link {
+        color: #94a3b8 !important;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.2s ease;
+        padding: 6px 12px !important;
+        border-radius: 8px;
+    }
+
+    .premium-nav .nav-link:hover {
+        color: #ffffff !important;
+        background: rgba(255, 255, 255, 0.04);
+    }
+
+    /* Active dynamic routing tab highlight */
+    .active-link {
+        color: #ffffff !important;
+        background: rgba(129, 140, 248, 0.1) !important;
+        border: 1px solid rgba(129, 140, 248, 0.2) !important;
+    }
+
+    /* Minimalist Profile Node Initial Letter Hack */
+    .nav-avatar-circle {
+        width: 28px;
+        height: 28px;
+        background: linear-gradient(135deg, #818cf8 0%, #4f46e5 100%);
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 0.85rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+
+    .profile-trigger::after {
+        color: #94a3b8;
+    }
+
+    /* Floating Dropdown System */
+    .premium-dropdown {
+        background: #111827 !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 10px 35px rgba(0,0,0,0.4) !important;
+        margin-top: 10px !important;
+        padding: 6px !important;
+    }
+
+    .premium-dropdown .dropdown-item {
+        color: #cbd5e1 !important;
+        font-size: 0.88rem;
+        font-weight: 500;
+        padding: 8px 16px !important;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+    }
+
+    .premium-dropdown .dropdown-item:hover {
+        background: rgba(220, 53, 69, 0.1) !important; /* Soft red for logout item */
+    }
+
+    /* Responsive Mobile Toggler Grid */
+    .custom-toggler {
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        padding: 6px 10px !important;
+        border-radius: 8px !important;
+        color: #ffffff !important;
+        background: transparent !important;
+    }
+    
+    .custom-toggler:focus {
+        box-shadow: none !important;
+    }
+
+    /* 🔥 High Contrast Premium Danger Alert Box Fix */
+    .custom-danger-alert {
+        background-color: rgba(239, 68, 68, 0.15) !important; /* Translucent red */
+        border: 1px solid rgba(239, 68, 68, 0.3) !important;
+        color: #fca5a5 !important; /* Bright soft red text for dark mode readability */
+        border-radius: 12px !important;
+        padding: 14px 16px !important;
+        font-weight: 500;
+    }
+</style>

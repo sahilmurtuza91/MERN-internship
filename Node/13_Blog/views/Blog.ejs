@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("./partials/head") %>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            <%= blog.title %> — Blogify
+        </title>
+
+        <!-- Google Fonts & Icons -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+        <style>
+            :root {
+                --bg-color: #0b0f19;
+                /* Deep space dark background */
+                --card-bg: #111827;
+                /* Tailwind Gray 900 for solid boxes */
+                --sidebar-bg: #1f2937;
+                /* Tailwind Gray 800 for sidebar */
+                --border-color: #4b5563;
+                /* High visibility gray border */
+                --text-main: #ffffff;
+                /* Pure white for headings */
+                --text-readable: #f8fafc;
+                /* Enhanced crisp off-white for body text */
+                --text-muted: #cbd5e1;
+                /* Clear bright gray for metadata */
+                --accent-glow: #818cf8;
+                /* Indigo core */
+            }
+
+            body {
+                background-color: var(--bg-color);
+                color: var(--text-main);
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                -webkit-font-smoothing: antialiased;
+                line-height: 1.8;
+            }
+
+            .tech-mono {
+                font-family: 'Space Mono', monospace;
+                font-size: 0.8rem;
+                letter-spacing: 0.5px;
+            }
+
+            /* Clean Back Button */
+            .btn-back {
+                color: var(--text-muted) !important;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 0.88rem;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                transition: all 0.2s ease;
+                padding: 8px 16px;
+                border: 1px solid var(--border-color);
+                border-radius: 10px;
+                background: rgba(255, 255, 255, 0.02);
+                margin-bottom: 24px;
+            }
+
+            .btn-back:hover {
+                color: #ffffff !important;
+                border-color: #ffffff;
+                background: rgba(255, 255, 255, 0.05);
+                transform: translateX(-3px);
+            }
+
+            /* High Visibility Cover Banner */
+            .detail-cover-wrapper {
+                width: 100%;
+                height: 400px;
+                border-radius: 16px;
+                overflow: hidden;
+                margin-bottom: 32px;
+                border: 1px solid var(--border-color);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            }
+
+            .detail-cover-img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .article-title {
+                font-weight: 800;
+                letter-spacing: -1.5px;
+                line-height: 1.3;
+                color: var(--text-main);
+            }
+
+            .article-subtitle-line {
+                font-size: 1.25rem;
+                color: #e2e8f0 !important;
+                font-weight: 500;
+                line-height: 1.5;
+                margin-top: 12px;
+                margin-bottom: 24px;
+            }
+
+            .author-badge {
+                width: 40px;
+                height: 40px;
+                background: linear-gradient(135deg, #818cf8 0%, #4f46e5 100%);
+                color: #ffffff;
+                font-weight: 700;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+            }
+
+            /* Category Pill Overlay */
+            .category-pill {
+                background: #ffffff;
+                color: #0b0f19;
+                font-weight: 700;
+                font-size: 0.75rem;
+                padding: 6px 14px;
+                border-radius: 30px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            }
+
+            /* PREMIUM CONTENT DESIGN WORKSPACE CONTAINER */
+            .content-paper-chassis {
+                background: rgba(17, 24, 39, 0.45);
+                border: 1px solid rgba(255, 255, 255, 0.06);
+                border-radius: 20px;
+                padding: 36px !important;
+                box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 15px 35px rgba(0, 0, 0, 0.3);
+            }
+
+            @media (max-width: 576px) {
+                .content-paper-chassis {
+                    padding: 20px 16px !important;
+                }
+            }
+
+            /* High Contrast Main Body Paragraphs Inside Container */
+            .article-body-content {
+                color: var(--text-readable);
+                font-size: 1.1rem;
+                white-space: pre-wrap;
+                font-weight: 400;
+            }
+
+            .article-body-content p {
+                margin-bottom: 24px;
+            }
+
+            /* FIXED HIGH CONTRAST SIDEBAR PANEL */
+            .sidebar-panel-fixed {
+                background: var(--sidebar-bg);
+                border: 1px solid var(--border-color);
+                border-radius: 16px;
+                padding: 24px;
+                position: sticky;
+                top: 100px;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            }
+
+            /* FIXED HIGH CONTRAST TABLE OF CONTENTS */
+            .toc-link-fixed {
+                color: #f1f5f9 !important;
+                text-decoration: none;
+                font-size: 0.9rem;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                transition: color 0.2s ease;
+            }
+
+            .toc-link-fixed:hover {
+                color: var(--accent-glow) !important;
+            }
+
+            /* FIXED HIGH CONTRAST SYSTEM ADVISORY BOX */
+            .advisory-box-fixed {
+                background: rgba(11, 15, 25, 0.6);
+                border: 1px dashed var(--border-color);
+                border-radius: 12px;
+                padding: 16px;
+            }
+
+            .advisory-text-fixed {
+                color: #cbd5e1 !important;
+                font-size: 0.85rem;
+                line-height: 1.5;
+                display: block;
+            }
+
+            /* Bottom Author Card */
+            .author-footer-card {
+                background: var(--card-bg);
+                border: 1px solid var(--border-color);
+                border-radius: 16px;
+                padding: 28px;
+                margin-top: 48px;
+            }
+
+            /* 🔥 DYNAMIC COMMENTS SECTION CUSTOM STYLING */
+            .comment-section-header {
+                font-weight: 800;
+                letter-spacing: -1px;
+                color: #ffffff;
+                margin-top: 48px;
+                margin-bottom: 20px;
+            }
+
+            .comment-input-area {
+                background: var(--card-bg);
+                border: 1px solid var(--border-color);
+                border-radius: 16px;
+                padding: 24px;
+                margin-bottom: 32px;
+            }
+
+            .comment-textarea {
+                background-color: #1f2937 !important;
+                border: 1px solid var(--border-color) !important;
+                border-radius: 10px !important;
+                color: #ffffff !important;
+                font-size: 0.95rem;
+                padding: 12px 16px;
+                transition: border-color 0.2s ease;
+            }
+
+            .comment-textarea:focus {
+                outline: none !important;
+                border-color: var(--accent-glow) !important;
+                box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.15) !important;
+            }
+
+            .btn-comment-submit {
+                background-color: #ffffff !important;
+                color: #0b0f19 !important;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 8px;
+                font-weight: 700;
+                font-size: 0.9rem;
+                transition: all 0.2s ease;
+            }
+
+            .btn-comment-submit:hover {
+                background-color: #f1f5f9 !important;
+                transform: translateY(-1px);
+            }
+
+            .comment-auth-prompt {
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px dashed var(--border-color);
+                border-radius: 12px;
+                padding: 20px;
+                text-align: center;
+                margin-bottom: 32px;
+            }
+
+            /* Comments Render Box Node */
+            .comment-wrapper-box {
+                display: flex;
+                gap: 16px;
+                padding: 20px;
+                background: rgba(17, 24, 39, 0.25);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                border-radius: 14px;
+                margin-bottom: 16px;
+            }
+
+            .comment-user-badge {
+                width: 34px;
+                height: 34px;
+                background: #374151;
+                color: #ffffff;
+                font-weight: 700;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                font-size: 0.8rem;
+                flex-shrink: 0;
+            }
+
+            .comment-textarea {
+                background: #1e293b;
+                color: white;
+            }
+
+            .comment-textarea::placeholder {
+                color: rgba(255, 255, 255, 0.6);
+                opacity: 1;
+            }
+        </style>
+</head>
+
+<body>
+    <!-- Premium Connected Navbar -->
+    <%- include("./partials/nav") %>
+
+        <div class="container my-5">
+            <!-- Back Button -->
+            <div class="row mb-2">
+                <div class="col-12">
+                    <a href="/" class="btn-back">
+                        <i class="bi bi-arrow-left"></i> Back to Logs
+                    </a>
+                </div>
+            </div>
+
+            <div class="row g-5">
+                <!-- LEFT AREA: Core Main Content Panel -->
+                <div class="col-12 col-lg-8">
+
+                    <header class="mb-2">
+                        <h1 class="article-title display-5">
+                            <%= blog.title %>
+                        </h1>
+
+                        <% if (locals.blog.summary) { %>
+                            <p class="article-subtitle-line">
+                                <%= blog.summary %>
+                            </p>
+                            <% } %>
+                    </header>
+
+                    <!-- Metadata Horizontal Grid -->
+                    <div
+                        class="d-flex align-items-center justify-content-between flex-wrap gap-3 pb-3 border-bottom border-secondary border-opacity-10 mb-4">
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="author-badge">
+                                <%= blog.author.fullName.charAt(0).toUpperCase() %>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <span class="small fw-bold text-white">
+                                    <%= blog.author.fullName %>
+                                </span>
+                                <span class="extra-small tech-mono" style="color: #cbd5e1; font-size: 0.72rem;">SYSTEM
+                                    OPERATOR</span>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3 tech-mono small"
+                            style="color: #cbd5e1 !important; font-weight: 600;">
+                            <span class="category-pill shadow-sm">
+                                <%= locals.blog.category ? blog.category : 'Technical' %>
+                            </span>
+                            <span>•</span>
+                            <span><i class="bi bi-hourglass-split"></i>
+                                <%= Math.max(1, Math.ceil(blog.content.length / 450)) %> min read
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Main Image Header Banner -->
+                    <% if (blog.coverImageURL) { %>
+                        <div class="detail-cover-wrapper">
+                            <img src="<%= blog.coverImageURL %>" class="detail-cover-img" alt="<%= blog.title %>">
+                        </div>
+                        <% } %>
+
+                            <!-- DYNAMIC CONTENT WORKSPACE DIV CONTAINER -->
+                            <div class="content-paper-chassis mb-4">
+                                <article class="article-body-content">
+                                    <%= blog.content %>
+                                </article>
+                            </div>
+
+                            <!-- Bottom Author Signature Card -->
+                            <div class="author-footer-card">
+                                <div class="row align-items-center g-3">
+                                    <div class="col-sm-2 text-center text-sm-start">
+                                        <div class="author-badge mx-auto ms-sm-0"
+                                            style="width: 50px; height: 50px; font-size: 1.1rem;">
+                                            <%= blog.author.fullName.charAt(0).toUpperCase() %>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-10 text-center text-sm-start">
+                                        <span class="tech-mono extra-small d-block mb-1"
+                                            style="color: var(--accent-glow); font-weight: 600;">LOGGED BY
+                                            OPERATOR</span>
+                                        <h5 class="fw-bold text-white mb-1">
+                                            <%= blog.author.fullName %>
+                                        </h5>
+                                        <p class="text-muted small mb-0" style="color: #cbd5e1 !important;">Core
+                                            software developer and contributor network stream at Blogify station logs.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 🔥 NEW CORE: COMMENTS MATRIX THREAD (Aapka Feature!) -->
+                            <h3 class="comment-section-header">
+                                <i class="bi bi-chat-left-text me-2 text-indigo"></i>Discussion (<%= comments.length %>)
+                            </h3>
+
+                            <!-- CONDITION 1: Form renders ONLY if user session cookie is active -->
+                            <% if (locals.user) { %>
+                                <div class="comment-input-area">
+                                    <form action="/blog/comment/<%= blog._id %>" method="POST">
+                                        <div class="mb-3">
+                                            <label class="form-label small fw-bold text-white-50 mb-2">Write a
+                                                comment</label>
+                                            <textarea class="form-control comment-textarea" name="content" rows="3"
+                                                placeholder="Share your analysis or ask a question..."
+                                                required></textarea>
+                                        </div>
+                                        <div class="text-end">
+                                            <button type="submit" class="btn-comment-submit">Post Comment</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <% } else { %>
+                                    <!-- Fallback message banner if guest user tries to interact -->
+                                    <div class="comment-auth-prompt">
+                                        <p class="text-muted small mb-3">You must be authenticated on the node server
+                                            thread to participate in this log discussion.</p>
+                                        <a href="/users/signin"
+                                            class="btn btn-outline-light btn-sm rounded-3 px-4 py-2 fw-semibold"
+                                            style="border-color: var(--border-color);">
+                                            <i class="bi bi-box-arrow-in-right me-1"></i> Sign In to Comment
+                                        </a>
+                                    </div>
+                                    <% } %>
+
+                                        <!-- CONDITION 2: Display existing comments for everyone (Guests & Admins both) -->
+                                        <div class="comment-feed-container">
+                                            <% if (comments.length===0) { %>
+                                                <p class="text-muted small text-center py-3 tech-mono">[ NO COMMENT
+                                                    METRICS INITIALIZED ]</p>
+                                                <% } %>
+
+                                                    <% comments.forEach(comment=> { %>
+                                                        <div class="comment-wrapper-box">
+                                                            <div class="comment-user-badge">
+                                                                <%= comment.createdBy.fullName.charAt(0).toUpperCase()
+                                                                    %>
+                                                            </div>
+                                                            <div class="d-flex flex-column w-100">
+                                                                <div
+                                                                    class="d-flex align-items-center justify-content-between mb-1">
+                                                                    <span class="text-white small fw-bold">
+                                                                        <%= comment.createdBy.fullName %>
+                                                                    </span>
+                                                                    <span
+                                                                        class="extra-small text-muted-bright tech-mono"
+                                                                        style="font-size: 0.72rem;">
+                                                                        <!-- Optional formatting layer placeholder for dates -->
+                                                                        Verified User
+                                                                    </span>
+                                                                </div>
+                                                                <p class="text-muted small mb-0"
+                                                                    style="color: #cbd5e1 !important; line-height: 1.5; font-size: 0.92rem;">
+                                                                    <%= comment.content %>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <% }) %>
+                                        </div>
+
+                </div>
+
+                <!-- RIGHT AREA: HIGH-CONTRAST SIDEBAR PANEL FIXED -->
+                <div class="col-12 col-lg-4 d-none d-lg-block">
+                    <div class="sidebar-panel-fixed">
+
+                        <!-- Box Item 1: System Metrics Controls -->
+                        <h6 class="fw-bold text-white tech-mono mb-3"
+                            style="color: var(--accent-glow); font-weight: 700;">[ 01 / ACTIONS ]</h6>
+
+                        <div class="d-grid gap-2 mb-4">
+                            <button class="btn btn-outline-light btn-sm rounded-3 py-2 text-start px-3"
+                                style="border-color: var(--border-color); color: #f1f5f9;" onclick="window.print()">
+                                <i class="bi bi-file-earmark-pdf me-2 text-info"></i> Save Log Document
+                            </button>
+                            <button class="btn btn-outline-light btn-sm rounded-3 py-2 text-start px-3"
+                                style="border-color: var(--border-color); color: #f1f5f9;"
+                                onclick="navigator.clipboard.writeText(window.location.href); alert('Log matrix URL copied!')">
+                                <i class="bi bi-link-45deg me-2 text-info"></i> Copy Share Link
+                            </button>
+                        </div>
+
+                        <hr class="border-secondary border-opacity-30 my-4">
+
+                        <!-- Box Item 2: Fixed Table of Contents Index links -->
+                        <h6 class="fw-bold text-white tech-mono mb-3"
+                            style="color: var(--accent-glow); font-weight: 700;">[ 02 / INDEX ]</h6>
+                        <div class="d-flex flex-column gap-3">
+                            <a href="#" class="toc-link-fixed"><i class="bi bi-hash text-muted"></i> Introduction
+                                Node</a>
+                            <a href="#" class="toc-link-fixed"><i class="bi bi-hash text-muted"></i> System
+                                Architecture</a>
+                            <a href="#" class="toc-link-fixed"><i class="bi bi-hash text-muted"></i> Execution
+                                Summary</a>
+                        </div>
+
+                        <hr class="border-secondary border-opacity-30 my-4">
+
+                        <!-- Box Item 3: Fixed High Contrast Advisory Text -->
+                        <div class="advisory-box-fixed">
+                            <span class="text-white small fw-bold d-flex align-items-center gap-2 mb-2">
+                                <i class="bi bi-cpu text-info"></i> System Advisory
+                            </span>
+                            <span class="advisory-text-fixed">
+                                Ensure compiler properties match version metrics while scaling decentralized raw
+                                markdown text buffers over production threads.
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <%- include("./partials/script") %>
+</body>
+
+</html>

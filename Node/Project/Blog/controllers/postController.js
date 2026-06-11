@@ -29,6 +29,7 @@ async function createPost(req, res) {
         return res.status(500).json({
             success: false,
             statusCode: 500,
+            error: error.message,
             message: "Internal server error"
         });
     }
