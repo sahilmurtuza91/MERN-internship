@@ -7,7 +7,7 @@ async function processStudents() {
 
     Promise.resolve().then(async () => {
         console.log("Microtask started --> Promise_1 then: time: ", new Date().toLocaleTimeString());
-        const students = await Student.find().limit(500);
+        const students = await Student.find().limit(100);
 
         const studentsTotal = students.map(student => {
             return {
